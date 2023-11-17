@@ -54,7 +54,7 @@ function optimizedIsPrime(n) {
     return true;
 }
 
-// time complexity = O(sqrt(n))
+// time complexity = O(sqrt(n)) non-linear, (faster)
 
 
 

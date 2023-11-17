@@ -18,3 +18,5 @@ return result;
 };
 
 console.log(factorial(4));
+
+// Big O = O(n) - Linear

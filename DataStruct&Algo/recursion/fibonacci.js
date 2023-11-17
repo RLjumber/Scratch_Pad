@@ -12,10 +12,7 @@ function recursiveFibonacci(n) {
     // break problem into smaller similar problem
     if (n < 2) return n;
 
-    console.log("what the hell",recursiveFibonacci(n-1))
-
     return recursiveFibonacci(n-1) + recursiveFibonacci(n-2);
-
 }
 
 console.log(recursiveFibonacci(6))
