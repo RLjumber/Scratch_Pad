@@ -33,6 +33,8 @@ function bubbleSort(arr) {
     return arr;
 };
 
+// Big O = O(n^2) - Quadratic time complexity, not great
+
 const arr = [ -6,-8, 10, -2, 30]
 
 console.log("Unsorted arr:", arr)

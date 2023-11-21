@@ -29,3 +29,5 @@ function insertionSort(arr) {
 arr = [-6, 20, 8, -2, 4];
 
 console.log(insertionSort(arr))
+
+// Nested loop = quadratic, so O(n^2)
