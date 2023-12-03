@@ -3,27 +3,57 @@ function timeConversion(s) {
     // check if second to last element in string is an A or P
     // if A then we do not need to add 12, unless === 12
     // only 12 AM will be - 12 hh
-    
-    for(let i = 0; i<s.length; ++i) {
-        var hh = s.slice(0,2);
-        // console.log("old hour: ", hh)
-        
-        if (s[s.length-2] === "P") {
-            let hour = parseInt(hh) + 12; //add 12
-            //convert to string, put back into string at beginning
-            let convertedHour = hour.toString();
-            convertedTime = s.replace(hh, convertedHour) 
-            return convertedTime
-        } else if (s[s.length-2] === "A" && hh === "12") {
-            hh = "00";
-            let convertedHour = hour.toString();
-            convertedTime = s.replace(hh, convertedHour) 
-            return convertedTime
-        }
+    var hh = s.slice(0,2);
+    var setting = s.slice(-2);
+    var rest = s.slice(2,-2);
+
+    if (setting === "PM" && hh !== "12") {
+        hh = (parseInt(hh) + 12).toString();
+    } else if (setting === "AM" && hh === "12") {
+        hh = "00";
     }
-    
-    
+    return hh + rest;
 }
 
 
-console.log(timeConversion("12:05:45AM"))
+console.log(timeConversion("12:05:45AM")); // Should print "00:05:45"
+console.log(timeConversion("12:05:45PM")); // Should print "12:05:45"
+console.log(timeConversion("07:05:45PM")); // Should print "19:05:45"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function timeConversion(s) {
+//     var hh = s.slice(0,2);
+//     var setting = s.slice(-2);
+//     var rest = s.slice(2, -2);
+    
+//     if (setting === "PM" && hh !== "12") {
+//         hh = (parseInt(hh) + 12).toString();
+//     } else if (setting === "AM" && hh === "12") {
+//         hh = "00";
+//     }
+    
+//     return hh + rest;
+// }
+
+// console.log(timeConversion("12:05:45AM")); // Should print "00:05:45"
+// console.log(timeConversion("12:05:45PM")); // Should print "12:05:45"
+// console.log(timeConversion("07:05:45PM")); // Should print "19:05:45"
